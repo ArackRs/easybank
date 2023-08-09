@@ -1,0 +1,36 @@
+$breakpoints: (
+    xs: 0px,
+    sm: 500px,
+    md: 1000px,
+    lg: 1500px,
+    xl: 5000px,
+);
+
+@mixin media($max: xl, $min: xs) {
+    @if map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max) {
+        @media (max-width: map-get($breakpoints, $max)) and (min-width: map-get($breakpoints, $min)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "El valor '#{$min}' no ha sido declarado";
+    }
+}
+
+@mixin flex($space: 1rem, $state: nowrap, $direction: row) {
+    display: flex;
+    gap: $space;
+    flex-flow: $state;
+}
+
+@mixin grid($space: initial, $var: 1fr) {
+    display: grid;
+    gap: $space;
+    grid-template-columns: $var;
+}
+
+@mixin bg-filter($color: #838383, $blur: 10px) {
+    background: $color;
+    filter: blur($blur);
+}

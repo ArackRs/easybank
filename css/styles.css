@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #000000;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  -webkit-hyphens: auto;
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 100%;
+}
+@media (max-width: 1000px) and (min-width: 0px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+body {
+  width: 100%;
+  max-width: 2000px;
+  height: 100vh;
+}
+
+section {
+  min-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: hsl(233, 26%, 24%);
+}
+
+h1 {
+  font-size: 3.3em;
+}
+
+h2 {
+  font-size: 2.3em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6vh;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 1.3vh;
+  line-height: 2.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.container {
+  padding: 0 5%;
+}
+
+.title {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: max(3rem, 5%);
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  color: hsl(0, 0%, 100%);
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  background-color: var(--dark-color);
+}
+
+.icon {
+  font-size: 1.5em;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #fff;
+  width: 100%;
+  height: 5rem;
+  padding: 0 10%;
+  display: flex;
+  gap: 1rem;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+.header__logo {
+  width: 10rem;
+}
+.header__menu {
+  display: flex;
+  gap: 2rem;
+  flex-flow: nowrap;
+}
+
+.main {
+  position: relative;
+}
+.main section {
+  padding: 5% 10%;
+}
+
+.hero {
+  background-color: hsl(0, 0%, 98%);
+  display: flex;
+  gap: 2rem;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+}
+.hero__content {
+  width: 40%;
+}
+.hero__content h1 {
+  line-height: 4rem;
+}
+.hero__content p {
+  padding: 1rem 0;
+}
+.hero__img {
+  position: absolute;
+  top: 0;
+  right: -10rem;
+}
+
+.why {
+  background-color: hsl(220, 16%, 96%);
+}
+.why__header {
+  padding-bottom: 5%;
+}
+.why__content {
+  display: flex;
+  gap: 2rem;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.why__box h3 {
+  padding: 1rem 0;
+}
+
+.articles {
+  background-color: hsl(0, 0%, 98%);
+}
+
+/*# sourceMappingURL=styles.css.map */
