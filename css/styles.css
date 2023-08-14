@@ -44,8 +44,9 @@ picture,
 video,
 iframe,
 figure {
+  width: min-content;
   max-width: 100%;
-  display: block;
+  display: inline-block;
   /* (Opcional) */
   object-fit: cover;
   /* (Opcional) */
@@ -161,6 +162,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header, section, footer {
+  padding: 0 5%;
+}
+
+section .container {
+  padding: 5% 0;
+}
+
 html {
   font-size: 100%;
 }
@@ -174,6 +183,7 @@ body {
   width: 100%;
   max-width: 2000px;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 section {
@@ -208,7 +218,6 @@ p {
 
 h6 {
   font-size: 1.3vh;
-  line-height: 2.4rem;
 }
 
 a {
@@ -222,11 +231,21 @@ ul {
 img {
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .container {
-  padding: 0 5%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) and (min-width: 0px) {
+  .content {
+    text-align: center;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
 
 .title {
@@ -260,44 +279,54 @@ img {
   background-color: #fff;
   width: 100%;
   height: 5rem;
-  padding: 0 10%;
-  display: flex;
-  gap: 1rem;
-  flex-flow: nowrap;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 100;
 }
+.header__container {
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
 .header__logo {
   width: 10rem;
 }
-.header__menu {
+.header__navbar {
   display: flex;
   gap: 2rem;
   flex-flow: nowrap;
 }
-
-.main {
-  position: relative;
-}
-.main section {
-  padding: 5% 10%;
+@media (max-width: 1000px) and (min-width: 0px) {
+  .header__navbar {
+    display: none;
+  }
 }
 
 .hero {
   background-color: hsl(0, 0%, 98%);
+  height: 80vh;
+  position: relative;
+}
+.hero__container {
+  height: 100%;
   display: flex;
   gap: 2rem;
   flex-flow: nowrap;
   justify-content: space-between;
-  align-items: center;
-  height: 80vh;
+}
+@media (max-width: 1000px) and (min-width: 0px) {
+  .hero__container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 .hero__content {
   width: 40%;
+  margin: auto 0;
 }
 .hero__content h1 {
   line-height: 4rem;
@@ -306,9 +335,21 @@ img {
   padding: 1rem 0;
 }
 .hero__img {
+  width: 50%;
   position: absolute;
-  top: 0;
-  right: -10rem;
+  top: -6vw;
+  right: -6vw;
+}
+.hero__img img {
+  width: 100%;
+}
+@media (max-width: 1000px) and (min-width: 0px) {
+  .hero__img {
+    position: relative;
+    top: -8vw;
+    right: 0;
+    width: 100%;
+  }
 }
 
 .why {
@@ -317,12 +358,21 @@ img {
 .why__header {
   padding-bottom: 5%;
 }
+.why__header h1 {
+  padding-bottom: 1rem;
+}
 .why__content {
   display: flex;
   gap: 2rem;
-  flex-flow: nowrap;
-  justify-content: space-between;
+  flex-flow: wrap;
   align-items: center;
+}
+.why__box {
+  max-width: 20rem;
+  flex: 1 1 15rem;
+}
+.why__box img {
+  width: min-content;
 }
 .why__box h3 {
   padding: 1rem 0;
@@ -330,6 +380,95 @@ img {
 
 .articles {
   background-color: hsl(0, 0%, 98%);
+}
+.articles__title {
+  padding-bottom: 5%;
+}
+.articles__content {
+  display: flex;
+  gap: 2rem;
+  flex-flow: wrap;
+}
+.articles__content div {
+  flex: 1 0 15rem;
+  max-width: 20rem;
+  background-color: #fff;
+  box-shadow: #000 1px 1px 20 0;
+}
+.articles__img {
+  width: 100%;
+  height: 50%;
+}
+.articles__info {
+  width: 100%;
+  height: 50%;
+  padding: 1.5rem;
+}
+.articles__info h6 {
+  padding-bottom: 0;
+}
+.articles__info h3 {
+  padding: 1rem 0;
+}
+
+.footer {
+  min-height: 10rem;
+  padding: 2rem auto;
+  background-color: hsl(233, 26%, 24%);
+  color: hsl(0, 0%, 100%);
+}
+.footer__content {
+  display: flex;
+  gap: 0.5rem;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__content .box {
+  min-height: 8rem;
+}
+.footer__content .box:first-child {
+  display: flex;
+  gap: 5rem;
+  flex-flow: wrap;
+  align-items: center;
+}
+.footer__content .box:last-child {
+  display: flex;
+  gap: 0.5rem;
+  flex-flow: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.footer__img {
+  display: flex;
+  gap: 0.5rem;
+  flex-flow: column;
+  align-items: center;
+}
+.footer__img--socials {
+  display: flex;
+  gap: 1rem;
+  flex-flow: wrap;
+}
+.footer__links {
+  display: flex;
+  gap: 0.5rem;
+  flex-flow: wrap;
+}
+.footer__links ul {
+  width: 15rem;
+  margin: auto;
+}
+
+.attribution {
+  padding: 1rem;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 /*# sourceMappingURL=styles.css.map */

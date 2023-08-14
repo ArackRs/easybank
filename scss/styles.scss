@@ -1,0 +1,186 @@
+@use 'base' as b;
+@use 'mixin' as m;
+
+.header {
+    background-color: #fff;
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    &__container {
+        height: 100%;
+        @include m.flex();
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        width: 10rem;
+    }
+
+    &__navbar {
+
+        @include m.flex(2rem);
+        @include m.media(md) {
+            display: none;
+        }
+    }
+}
+
+.hero {
+    background-color: b.$veryLightGray;
+    height: 80vh;
+    position: relative;
+    &__container {
+        height: 100%;
+        @include m.flex(2rem);
+        justify-content: space-between;
+        @include m.media(md) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+    &__content {
+        width: 40%;
+        margin: auto 0;
+
+        h1 {
+            line-height: 4rem;
+        }
+
+        p {
+            padding: 1rem 0;
+        }
+    }
+
+    &__img {
+        width: 50%;
+        position: absolute;
+        top: -6vw;
+        right: -6vw;
+        img {
+            width: 100%;
+        }
+        @include m.media(md) {
+            position: relative;
+            top: -8vw;
+            right: 0;
+            width: 100%;
+        }
+    }
+}
+
+.why {
+    background-color: b.$lightGrayishBlue;
+
+    &__header {
+        padding-bottom: 5%;
+        h1 {
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__content {
+        @include m.flex(2rem, wrap);
+        align-items: center;
+    }
+
+    &__box {
+        max-width: 20rem;
+        flex: 1 1 15rem;
+        img {
+            width: min-content;
+        }
+        h3 {
+            padding: 1rem 0;
+        }
+    }
+}
+
+.articles {
+    background-color: b.$veryLightGray;
+
+    &__title {
+        padding-bottom: 5%;
+    }
+
+    &__content {
+        @include m.flex(2rem, wrap);
+        div {
+            flex: 1 0 15rem;
+            max-width: 20rem;
+            background-color: #fff;
+            box-shadow: #000 1px 1px 20 0;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 50%;
+    }
+
+    &__info {
+        width: 100%;
+        height: 50%;
+        padding: 1.5rem;
+        h6 {
+            padding-bottom: 0;
+        }
+        h3 {
+            padding: 1rem 0;
+        }
+    }
+
+}
+
+.footer {
+    min-height: 10rem;
+    padding: 2rem auto;
+    background-color: b.$darkBlue;
+    color: b.$white;
+    &__content {
+        @include m.flex(0.5rem, wrap);
+        justify-content: space-between;
+        align-items: center;
+        .box {
+            min-height: 8rem;
+            &:first-child {
+                @include m.flex(5rem, wrap);
+                align-items: center;
+            }
+            &:last-child {
+                @include m.flex(0.5rem, column);
+                align-items: flex-end;
+                justify-content: center;
+            }
+        }
+    }
+    &__img {
+        @include m.flex(0.5rem, column);
+        align-items: center;
+
+        &--socials {
+            @include m.flex(1rem, wrap);
+            // justify-content: center;
+            // align-items: center;
+        }
+    }
+    &__links {
+        @include m.flex(0.5rem, wrap);
+        ul {
+            width: 15rem;
+            margin: auto;
+        }
+    }
+}
+
+.attribution {
+    padding: 1rem;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}

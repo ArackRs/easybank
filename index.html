@@ -9,41 +9,32 @@
   <title>Frontend Mentor | Easybank landing page</title>
   <link rel="stylesheet" href="css/styles.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
 
   <header class="header">
-    <div class="header__logo">
-      <img src="images/logo.svg" alt="logo">
-    </div>
-    <nav class="header__menu">
-      <a href="#Home" class="header__link">Home</a>
-      <a href="#About" class="header__link">About</a>
-      <a href="#Contact" class="header__link">Contact</a>
-      <a href="#Blog" class="header__link">Blog</a>
-      <a href="#Careers" class="header__link">Careers</a>
-    </nav>
-    <div class="header__btn">
-      <button class="btn">Request Invite</button>
+    <div class="header__container container">
+      <div class="header__logo">
+        <img src="images/logo.svg" alt="logo">
+      </div>
+      <nav class="header__navbar">
+        <a href="#Home" class="header__link">Home</a>
+        <a href="#About" class="header__link">About</a>
+        <a href="#Contact" class="header__link">Contact</a>
+        <a href="#Blog" class="header__link">Blog</a>
+        <a href="#Careers" class="header__link">Careers</a>
+      </nav>
+      <div class="header__btn">
+        <button class="btn">Request Invite</button>
+      </div>
     </div>
   </header>
-  
-  
+
   <main class="main">
     <section class="hero" id="hero">
-      <!-- <div class="hero__container container"> -->
-        <div class="hero__content">
+      <div class="hero__container container">
+        <div class="hero__content content">
           <h1>Next generation digital banking</h1>
           <p>Take your financial life online. Your Easybank account will be a one-stop-shop
             for spending, saving, budgeting, investing, and much more.</p>
@@ -52,17 +43,17 @@
         <div class="hero__img">
           <img src="images/image-mockups.png" alt="mockups">
         </div>
-      <!-- </div> -->
+      </div>
     </section>
 
     <section class="why" id="why">
       <div class="why__container container">
-        <div class="why__header">
-          <h2>Why choose Easybank?</h2>
+        <div class="why__header content">
+          <h1>Why choose Easybank?</h1>
           <p>We leverage Open Banking to turn your bank account into your financial hub. Control
             your finances like never before.</p>
         </div>
-        <div class="why__content">
+        <div class="why__content content">
           <div class="why__box">
             <img src="images/icon-online.svg" alt="online banking">
             <h3>Online Banking</h3>
@@ -93,81 +84,93 @@
 
     <section class="articles" id="articles">
       <div class="articles__container container">
-        <h1 class="articles__title">
+        <h1 class="articles__title content">
           Latest Articles
         </h1>
-        <article>
-          <div class="article__img">
-            <img src="images/image-currency.jpg" alt="currency">
+        <div class="articles__content content">
+          <div>
+            <div class="articles__img">
+              <img src="images/image-currency.jpg" alt="currency">
+            </div>
+            <div class="articles__info">
+              <h6>By Claire Robinson</h6>
+              <h3>Receive money in any currency with no fees</h3>
+              <p>The world is getting smaller and we’re becoming more mobile. So why should you be
+                forced to only receive money in a single …</p>
+            </div>
           </div>
-          <div class="article__content">
-            <h6>By Claire Robinson</h6>
-            <h2>Receive money in any currency with no fees</h2>
-            <p>The world is getting smaller and we’re becoming more mobile. So why should you be
-              forced to only receive money in a single …</p>
-            <a href="#">Read more</a>
+          <div>
+            <div class="articles__img">
+              <img src="images/image-restaurant.jpg" alt="restaurant">
+            </div>
+            <div class="articles__info">
+              <h6>By Wilson Hutton</h6>
+              <h3>Treat yourself without worrying about money</h3>
+              <p>Our simple budgeting feature allows you to separate out your spending and set
+                realistic limits each month. That means you …</p>
+            </div>
           </div>
-        </article>
-        <article>
-          <div class="article__img">
-            <img src="images/image-restaurant.jpg" alt="restaurant">
+          <div>
+            <div class="articles__img">
+              <img src="images/image-plane.jpg" alt="plane">
+            </div>
+            <div class="articles__info">
+              <h6>By Wilson Hutton</h6>
+              <h3>Take your Easybank card wherever you go</h3>
+              <p>We want you to enjoy your travels. This is why we don’t charge any fees on purchases
+                while you’re abroad. We’ll even show you …</p>
+            </div>
           </div>
-          <div class="article__content">
-            <h6>By Wilson Hutton</h6>
-            <h2>Treat yourself without worrying about money</h2>
-            <p>Our simple budgeting feature allows you to separate out your spending and set
-              realistic limits each month. That means you …</p>
-            <a href="#">Read more</a>
+          <div>
+            <div class="articles__img">
+              <img src="images/image-confetti.jpg" alt="confetti">
+            </div>
+            <div class="articles__info">
+              <h6>By Claire Robinson</h6>
+              <h3>Our invite-only Beta accounts are now live!</h3>
+              <p>After a lot of hard work by the whole team, we’re excited to launch our closed beta.
+                It’s easy to request an invite through the site ...</p>
+            </div>
           </div>
-        </article>
-        <article>
-          <div class="article__img">
-            <img src="images/image-plane.jpg" alt="plane">
-          </div>
-          <div class="article__content">
-            <h6>By Wilson Hutton</h6>
-            <h2>Take your Easybank card wherever you go</h2>
-            <p>We want you to enjoy your travels. This is why we don’t charge any fees on purchases
-              while you’re abroad. We’ll even show you …</p>
-            <a href="#">Read more</a>
-          </div>
-        </article>
-        <article>
-          <div class="article__img">
-            <img src="images/image-confetti.jpg" alt="confetti">
-          </div>
-          <div class="article__content">
-            <h6>By Claire Robinson</h6>
-            <h2>Our invite-only Beta accounts are now live!</h2>
-            <p>After a lot of hard work by the whole team, we’re excited to launch our closed beta.
-              It’s easy to request an invite through the site ...</p>
-            <a href="#">Read more</a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer container">
-    <div class="footer__logo"></div>
-    <div class="footer__socials">
-      <a href="#"><img src="images/icon-facebook.svg" alt="facebook"></a>
-      <a href="#"><img src="images/icon-youtube.svg" alt="youtube"></a>
-      <a href="#"><img src="images/icon-twitter.svg" alt="twitter"></a>
-      <a href="#"><img src="images/icon-pinterest.svg" alt="pinterest"></a>
-      <a href="#"><img src="images/icon-instagram.svg" alt="instagram"></a>
-    </div>
-    <div class="footer__links">
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-      <a href="#">Blog</a>
-      <a href="#">Careers</a>
-      <a href="#">Support</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-    <div class="footer__more">
-      <button class="btn">Request Invite</button>
-      <a href="#">© Easybank. All Rights Reserved</a>
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__content content">
+        <div class="box content">
+          <div class="footer__img content">
+            <div class="footer__img--logo">
+              <img src="images/logo.svg" alt="logo">
+            </div>
+            <div class="footer__img--socials">
+              <a href="#"><img src="images/icon-facebook.svg" alt="facebook"></a>
+              <a href="#"><img src="images/icon-youtube.svg" alt="youtube"></a>
+              <a href="#"><img src="images/icon-twitter.svg" alt="twitter"></a>
+              <a href="#"><img src="images/icon-pinterest.svg" alt="pinterest"></a>
+              <a href="#"><img src="images/icon-instagram.svg" alt="instagram"></a>
+            </div>
+          </div>
+          <div class="footer__links content">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box content">
+          <button class="btn">Request Invite</button>
+          <p>© Easybank. All Rights Reserved</p>
+        </div>
+      </div>
     </div>
   </footer>
 

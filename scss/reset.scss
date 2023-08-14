@@ -50,8 +50,11 @@ picture,
 video,
 iframe,
 figure {
+    // width: 100%;
+    width: min-content;
+
     max-width: 100%;
-    display: block;
+    display: inline-block;
     /* (Opcional) */
     object-fit: cover;
     /* (Opcional) */
@@ -166,4 +169,13 @@ body {
     -webkit-font-smoothing: antialiased;
     /* (Opcional) */
     -moz-osx-font-smoothing: grayscale;
+}
+
+header, section, footer {
+    padding: 0 5%;
+}
+section {
+    .container {
+        padding: 5% 0;
+    }
 }
